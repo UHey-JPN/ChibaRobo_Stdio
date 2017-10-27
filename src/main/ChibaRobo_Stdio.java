@@ -26,7 +26,7 @@ public class ChibaRobo_Stdio implements StateUpdateListener {
 		while(true) {
 			try {
 				String input = in.readLine();
-				if(input.equals("quit")) break;
+				if(input.equals("quit")) System.exit(0);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
