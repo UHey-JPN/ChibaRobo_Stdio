@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextPane;
 
 import data.communication.ServerData;
 import data.communication.StateData;
@@ -56,7 +56,9 @@ public class UdpSocket implements Runnable{
 		} catch (SocketException e) {
 			e.printStackTrace();
 			JFrame f = new JFrame();
-			JLabel label = new JLabel("UDP Port 58239 is already used.");
+			JTextPane label = new JTextPane();
+			label.setOpaque(false);
+			label.setText("前回のプログラムが終了できていない可能性があります。\n「タスクマネージャー」の「プロセス」から\n「Java(TM) Platform SE binary」のようなものを終了してください。");
 			JOptionPane.showMessageDialog(f, label);
 			System.exit(1);
 		}
