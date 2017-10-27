@@ -1,5 +1,8 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -19,6 +22,17 @@ public class ChibaRobo_Stdio implements StateUpdateListener {
 
 	public static void main(String[] args) {
 		new ChibaRobo_Stdio();
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		while(true) {
+			try {
+				String input = in.readLine();
+				if(input.equals("quit")) break;
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
 
 	}
 
